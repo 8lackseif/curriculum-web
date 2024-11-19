@@ -1,0 +1,10 @@
+# Ignore .env file that contains sensitive information (passwords, API keys)
+.env
+
+# Ignore the compiled Docker Compose override file (if you have one)
+docker-compose.override.yml
+
+# Ignore local configuration or build files
+.docker/
+.docker-compose.yml*
+docker-compose.override.yml*
