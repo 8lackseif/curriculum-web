@@ -1,15 +1,15 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
 
-/**
- * DTO for {@link com.backend.backend.models.ProjectModel}
- */
-@Value
-public class ProjectDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class ProjectDto {
     String title;
     String description;
     String projectLink;
+    Integer user_id;
 }

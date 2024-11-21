@@ -1,14 +1,14 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
 
-/**
- * DTO for {@link com.backend.backend.models.SocialMediaModel}
- */
-@Value
-public class SocialMediaDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class SocialMediaDto {
     String socialMedia;
     String link;
+    Integer user_id;
 }

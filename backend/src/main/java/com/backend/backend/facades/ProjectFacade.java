@@ -1,4 +1,9 @@
 package com.backend.backend.facades;
 
-public class ProjectFacade {
+import com.backend.backend.dtos.ProjectDto;
+
+import java.util.List;
+
+public interface ProjectFacade {
+    List<ProjectDto> getAllByUserId(Integer id);
 }

@@ -1,15 +1,14 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
-
-/**
- * DTO for {@link com.backend.backend.models.OtherRecognitionModel}
- */
-@Value
-public class OtherRecognitionDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class OtherRecognitionDto {
     String name;
     String description;
     Integer year;
+    Integer user_id;
 }

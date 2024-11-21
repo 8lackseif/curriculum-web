@@ -6,7 +6,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Data
-public class SkillModelDto {
+public class SkillDto {
     String skill;
     String level;
+    Integer user_id;
 }

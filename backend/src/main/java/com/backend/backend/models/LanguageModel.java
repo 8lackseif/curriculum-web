@@ -13,7 +13,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 @Entity
 @Table(name = "languages")
-public class Language {
+public class LanguageModel {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -28,5 +28,5 @@ public class Language {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserModel user;
 }

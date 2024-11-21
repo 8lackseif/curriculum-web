@@ -3,8 +3,10 @@ package com.backend.backend.converters;
 import com.backend.backend.dtos.SkillDto;
 import com.backend.backend.models.SkillModel;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
-public class skillModelToDtoConverter implements Converter<SkillModel, SkillDto> {
+@Component
+public class SkillModelToDtoConverter implements Converter<SkillModel, SkillDto> {
     @Override
     public SkillDto convert(SkillModel skill) {
         return SkillDto

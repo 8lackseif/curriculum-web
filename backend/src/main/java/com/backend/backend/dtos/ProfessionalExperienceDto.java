@@ -1,17 +1,16 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
-
-/**
- * DTO for {@link com.backend.backend.models.ProfessionalExperienceModel}
- */
-@Value
-public class ProfessionalExperienceDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class ProfessionalExperienceDto {
     String jobTitle;
     Integer startYear;
     Integer endYear;
     String company;
     Boolean currentlyEmployed;
+    Integer user_id;
 }

@@ -10,7 +10,8 @@ import jakarta.persistence.*;
 @Setter
 @Entity
 @Table(name = "users")
-public class User {
+public class UserModel {
+
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;

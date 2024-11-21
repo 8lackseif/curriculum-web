@@ -1,4 +1,9 @@
 package com.backend.backend.facades;
 
-public class SkillFacade {
+import com.backend.backend.dtos.SkillDto;
+
+import java.util.List;
+
+public interface SkillFacade {
+    List<SkillDto> getAllByUserId(Integer id);
 }

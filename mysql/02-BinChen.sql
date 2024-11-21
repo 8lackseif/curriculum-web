@@ -1,5 +1,8 @@
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+SET CHARACTER SET utf8mb4;
+
 -- Inserting into the 'users' table
-INSERT INTO users (first_name, last_name, phone_number, email, summary)
+INSERT INTO users (name, surname, phone_number, email, summary)
 VALUES ('Bin', 'Chen', '+34688001661', 'bchen01w@gmail.com', 'Full Stack Developer');
 
 -- Inserting into the 'skills' table
@@ -28,7 +31,7 @@ VALUES
     ('Ingeniería Software', 2019, 2022, 'Universidad Complutense de Madrid', FALSE, 1);
 
 -- Inserting into the 'professional_experience' table
-INSERT INTO professional_experience (title, start_year, end_year, company, is_current, user_id)
+INSERT INTO professional_experience (job_title, start_year, end_year, company, currently_employed, user_id)
 VALUES 
     ('Estudiante Prácticas FP', 2024, 2024, 'AspaNETCONOMY', FALSE, 1);
 

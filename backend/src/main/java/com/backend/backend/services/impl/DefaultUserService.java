@@ -4,9 +4,9 @@ import com.backend.backend.daos.UserDao;
 import com.backend.backend.models.UserModel;
 import com.backend.backend.services.UserService;
 import jakarta.annotation.Resource;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class DefaultUserService implements UserService {
 
     @Resource

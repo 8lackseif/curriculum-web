@@ -1,4 +1,12 @@
 package com.backend.backend.daos;
 
-public interface ProjectDao {
+import com.backend.backend.models.ProjectModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ProjectDao extends JpaRepository<ProjectModel, Long> {
+    List<ProjectModel> getProjectModelByUser_Id(Integer id);
 }

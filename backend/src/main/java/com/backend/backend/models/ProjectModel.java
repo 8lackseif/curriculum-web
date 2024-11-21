@@ -13,7 +13,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 @Entity
 @Table(name = "projects")
-public class Project {
+public class ProjectModel {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -31,5 +31,5 @@ public class Project {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserModel user;
 }

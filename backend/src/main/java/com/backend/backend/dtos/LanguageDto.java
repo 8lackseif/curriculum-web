@@ -1,14 +1,14 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
 
-/**
- * DTO for {@link com.backend.backend.models.LanguageModel}
- */
-@Value
-public class LanguageDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class LanguageDto {
     String language;
     String level;
+    Integer user_id;
 }

@@ -1,17 +1,17 @@
 package com.backend.backend.dtos;
 
-import lombok.Value;
+import lombok.*;
 
-import java.io.Serializable;
 
-/**
- * DTO for {@link com.backend.backend.models.EducationModel}
- */
-@Value
-public class EducationDto implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class EducationDto {
     String title;
     Integer startYear;
     Integer endYear;
     String school;
     Boolean finished;
+    Integer user_id;
 }

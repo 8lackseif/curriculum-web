@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
-  mariadb:
+  db:
     container_name: my_database
-    image: mariadb
+    image: mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
@@ -12,10 +10,27 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - TZ=Europe/Madrid
     volumes:
-      - my_database:/var/lib/mysql
-      - ./mysql/:/docker-entrypoint-initdb.d
+      - my_database:/var/lib/mysql  
+      - ./mysql:/docker-entrypoint-initdb.d  
     ports:
-      - 3306:3306
+      - 3306:3306  
 
+  app:
+    container_name: spring_boot_app
+    build:
+      context: ./backend
+      dockerfile: Dockerfile    
+    restart: always
+    environment:
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_URL=${MYSQL_URL}
+    depends_on:
+      - db
+    ports:
+      - 8080:8080       
 volumes:
   my_database:
+
+    
+    

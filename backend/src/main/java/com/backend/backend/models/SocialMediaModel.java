@@ -12,7 +12,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 @Entity
 @Table(name = "social_media")
-public class SocialMedia {
+public class SocialMediaModel {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -26,5 +26,5 @@ public class SocialMedia {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserModel user;
 }

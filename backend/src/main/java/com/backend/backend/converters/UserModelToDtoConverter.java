@@ -17,6 +17,7 @@ public class UserModelToDtoConverter implements Converter<UserModel, UserDto> {
                     .surname(userModel.getSurname())
                     .email(userModel.getEmail())
                     .phoneNumber(userModel.getPhoneNumber())
+                    .summary(userModel.getSummary())
                     .build();
     }
 }

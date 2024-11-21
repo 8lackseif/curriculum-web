@@ -12,7 +12,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 @Entity
 @Table(name = "other_recognitions")
-public class OtherRecognition {
+public class OtherRecognitionModel {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -30,5 +30,5 @@ public class OtherRecognition {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserModel user;
 }
