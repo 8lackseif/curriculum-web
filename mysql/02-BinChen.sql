@@ -51,7 +51,7 @@ VALUES
 -- Inserting into the 'other_recognitions' table
 INSERT INTO other_recognitions (name, description, year, user_id)
 VALUES 
-    ('Concurso Programame 2024', 'Primer puesto concurso de programación Programame 2024 Regional de Villaviciosa de Odón.', 2024, 1);
+    ('Concurso Programame 2024', 'Primer puesto concurso de programación Programame 2024 Regional de Villaviciosa de Odón, equipo barrabinbarrabashh.', 2024, 1);
 
 -- Inserting into the 'projects' table
 INSERT INTO projects (title, description, project_link, user_id)

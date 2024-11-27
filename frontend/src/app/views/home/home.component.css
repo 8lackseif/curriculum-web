@@ -1,0 +1,91 @@
+.basic-info {
+    width: 40vw;
+    margin: auto;
+    margin-top: 2%;
+    display: block;
+}
+
+.advanced-info {
+    width: 60vw;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.basic-info-photo {
+    width: 200px;
+    height: 260px;
+    border-radius: var(--border-radius);
+}
+
+.basic-info-data {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.vertical {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 5%;
+}
+
+.icons-container {
+    gap: 20%;
+}
+
+.icon {
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.view-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+}
+
+.skill-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    border: 1px rgba(143, 142, 142, 0.308) solid;
+    border-radius: var(--border-radius);
+    padding: 2% 2%;
+}
+
+.skill-container:hover {
+    background-color: rgb(241, 241, 241);   
+}
+
+.skill-container span {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.skill-container p-rating {
+    margin-right: 5%;
+}
+
+.education-container {
+    width: 60vw;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.education-title {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    gap:1%;
+}
+
+.education-title i {
+    font-size: 4rem;
+}
+
+.social-media-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+}

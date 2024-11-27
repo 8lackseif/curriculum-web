@@ -55,7 +55,7 @@ CREATE TABLE social_media (
 CREATE TABLE languages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     language VARCHAR(255) NOT NULL,                                 -- The language user knows
-    level ENUM('Basic', 'Intermediate', 'Advanced') NOT NULL,       -- Level of the language
+    level ENUM('basic', 'intermediate', 'advanced') NOT NULL,       -- Level of the language
     user_id INT,                                                    -- Foreign key to link the recognition to a user
     CONSTRAINT unique_language_user UNIQUE (language, user_id),
     CONSTRAINT fk_user_languages FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

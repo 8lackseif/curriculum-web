@@ -1,0 +1,12 @@
+<div class="header" [ngClass]="sidebarVisible ? 'with-sidebar' : 'without-sidebar'">
+    <app-header (changeVisibility)="showSidebar($event)"></app-header>
+</div>
+
+<div class="sidebar" [ngClass]="{ 'showSidebar': sidebarVisible, 'hideSidebar': !sidebarVisible }">
+    <app-menu></app-menu>
+</div>
+
+  
+<div class="content" [ngClass]="sidebarVisible ? 'with-sidebar' : 'without-sidebar'">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,88 @@
+<div class="basic-info">
+    <p-card>
+        <div class="vertical">
+            <img src="../../../assets/1725537937648.jpg" alt="foto" class="basic-info-photo" />
+            <div class="basic-info-data">
+                <h1><strong>{{basicData.name}} {{basicData.surname}}</strong></h1>
+                <h3>{{ basicData.summary }}</h3>
+                <div class="vertical">
+                    <div class="vertical icons-container">
+                        <i class="pi pi-send icon"></i>
+                        <i class="pi pi-envelope icon"></i>
+                    </div>
+                    <p>{{ basicData.email }}</p>
+                </div>
+            </div>
+        </div>
+
+    </p-card>
+</div>
+
+<div class="advanced-info">
+    <p-tabView styleClass="tabview-custom">
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-pencil"></i>
+                <span>&nbsp;Skills</span>
+            </ng-template>
+            <div class="view-container">
+                <div *ngFor="let skill of skills" class="skill-container">
+                    <span>{{ skill.skill }}</span>
+                    <p-rating [(ngModel)]="basic" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="skill.level===level.Basic" />
+                    <p-rating [(ngModel)]="intermediate" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="skill.level===level.Intermediate" />
+                    <p-rating [(ngModel)]="advanced" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="skill.level==level.Advanced" />
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-language"></i>
+                <span>&nbsp;Languages</span>
+            </ng-template>
+            <div class="view-container">
+                <div *ngFor="let language of languages" class="skill-container">
+                    <span>{{ language.language }}</span>
+                    <p-rating [(ngModel)]="basic" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="language.level===level.Basic" />
+                    <p-rating [(ngModel)]="intermediate" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="language.level===level.Intermediate" />
+                    <p-rating [(ngModel)]="advanced" stars="6" [readonly]="true" [cancel]="false"
+                        *ngIf="language.level==level.Advanced" />
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-trophy"></i>
+                <span>&nbsp;Recognitions</span>
+            </ng-template>
+            <div class="recognitions-container">
+                <p-card *ngFor="let recognition of recognitions" header="{{recognition.name}}" subheader="{{recognition.year}}">
+                    <span>{{recognition.description}}</span>
+                </p-card>
+            </div>
+        </p-tabPanel>
+    </p-tabView>
+</div>
+
+<div class="education-container">
+    <div class="education-title">
+        <i class="pi pi-graduation-cap"></i>
+        <h1><strong>Education</strong></h1>
+    </div>
+    <p-accordion multiple="true">
+        <p-accordionTab *ngFor="let education of educations" header="{{education.title}}">
+            <p><strong>{{education.startYear}}-{{education.endYear}}</strong></p>
+            <p>{{education.school}}</p>
+            <i class="pi pi-check" *ngIf="education.finished==true"></i>
+            <i class="pi pi-times" *ngIf="education.finished==false"></i>
+        </p-accordionTab>
+    </p-accordion>
+</div>
+
+<div class="social-media-container">
+
+</div>
