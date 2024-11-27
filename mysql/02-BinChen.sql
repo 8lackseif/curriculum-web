@@ -38,7 +38,7 @@ VALUES
 -- Inserting into the 'social_media' table
 INSERT INTO social_media (social_media, link, user_id)
 VALUES
-    ('LinkedIn', 'www.linkedin.com/in/binchen20014475', 1),
+    ('LinkedIn', 'https://www.linkedin.com/in/binchen20014475', 1),
     ('GitHub', 'https://github.com/8lackseif', 1);
 
 -- Inserting into the 'languages' table
