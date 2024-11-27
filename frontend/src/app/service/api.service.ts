@@ -7,6 +7,7 @@ import { SkillData } from '../models/skill.model';
 import { LanguageData } from '../models/language.model';
 import { RecognitionData } from '../models/recognition.model';
 import { EducationData } from '../models/education.model';
+import { SocialMediaData } from '../models/social-media.model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,9 @@ export class ApiService {
 
   getEducations(): Observable<Array<EducationData>> {
     return this.http.get<Array<EducationData>>(this.api_url + '/education/get/1');
+  }
+
+  getSocialMedias(): Observable<Array<SocialMediaData>> {
+    return this.http.get<Array<SocialMediaData>>(this.api_url + '/social_media/get/1');
   }
 }

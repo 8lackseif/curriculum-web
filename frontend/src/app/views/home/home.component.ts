@@ -6,6 +6,7 @@ import { Level } from '../../models/level.enum';
 import { LanguageData } from '../../models/language.model';
 import { RecognitionData } from '../../models/recognition.model';
 import { EducationData } from '../../models/education.model';
+import { SocialMediaData } from '../../models/social-media.model';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ export class HomeComponent {
   languages: Array<LanguageData> = [];
   recognitions: Array<RecognitionData> = [];
   educations: Array<EducationData> = [];
+  social_medias: Array<SocialMediaData> = [];
 
   basic = 2;
   intermediate = 4;
@@ -70,6 +72,13 @@ export class HomeComponent {
     this.api.getEducations().subscribe(
       data => {
         this.educations = data;
+      }
+    );
+
+    //get user social media
+    this.api.getSocialMedias().subscribe(
+      data => {
+        this.social_medias = data;
       }
     );
 

@@ -1,5 +1,5 @@
 export interface SocialMediaData {
-    social_media: string,
+    socialMedia: string,
     link: string,
     user_id: number
 }

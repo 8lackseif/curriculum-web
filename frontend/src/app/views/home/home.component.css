@@ -86,6 +86,10 @@
 
 .social-media-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 60vw;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2%;
+    margin-top: 5%;
 }
+
