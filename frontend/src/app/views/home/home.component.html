@@ -60,7 +60,8 @@
                 <span>&nbsp;Recognitions</span>
             </ng-template>
             <div class="recognitions-container">
-                <p-card *ngFor="let recognition of recognitions" header="{{recognition.name}}" subheader="{{recognition.year}}">
+                <p-card *ngFor="let recognition of recognitions" header="{{recognition.name}}"
+                    subheader="{{recognition.year}}">
                     <span>{{recognition.description}}</span>
                 </p-card>
             </div>
@@ -84,16 +85,20 @@
 </div>
 
 <div class="social-media-container">
-    <p-card *ngFor="let social_media of social_medias; index as i" header="{{ social_media.socialMedia }}">
-        <div class="link-container">
-            <img alt="preview" src="{{ social_medias_previews[i]?.favicons?.at(0) }}" class="social-media-favicon"/>
-            <a href="{{ social_media.link }}"><span>{{ social_media.link }}</span></a>
-        </div>
-        <a href="{{ social_media.link }}" class="preview-content">
-            <p-card header="{{ social_medias_previews[i]?.title }}">
-                <p>{{ social_medias_previews[i]?.description }}</p>
-                <img src="{{ social_medias_previews[i]?.images?.at(0) }}" class="social-media-image" alt="failed loading page preview"/>
-            </p-card>
-        </a>
-    </p-card>
+    <div *ngFor="let social_media of social_medias; index as i" class="social-media-card">
+        <p-card  header="{{ social_media.socialMedia }}">
+            <div class="link-container">
+                <img alt="preview" src="{{ social_medias_previews[i]?.favicons?.at(0) }}"
+                    class="social-media-favicon" />
+                <a href="{{ social_media.link }}"><span>{{ social_media.link }}</span></a>
+            </div>
+            <a href="{{ social_media.link }}" class="preview-content">
+                <p-card header="{{ social_medias_previews[i]?.title }}">
+                    <p>{{ social_medias_previews[i]?.description }}</p>
+                    <img src="{{ social_medias_previews[i]?.images?.at(0) }}" class="social-media-image"
+                        alt="failed loading page preview" />
+                </p-card>
+            </a>
+        </p-card>
+    </div>
 </div>

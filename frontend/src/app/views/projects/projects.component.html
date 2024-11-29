@@ -1,1 +1,18 @@
-<p>projects works!</p>
+<div class="projects-container">
+    <div class="project-container" *ngFor="let project of projects; index as i">
+        <p-accordion>
+            <p-accordionTab header="{{ project.title }}">
+                <div class="project-content">
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.projectLink }}">{{ project.projectLink }}</a>
+                    <div class="project-preview">
+                        <p-card header="{{ projects_preview[i]?.title }}">
+                            <p>{{ projects_preview[i]?.description }}</p>
+                            <img src="{{ projects_preview[i]?.images?.at(0) }}" alt="preview image" />
+                        </p-card>
+                    </div>
+                </div>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>

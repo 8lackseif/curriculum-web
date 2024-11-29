@@ -1,1 +1,13 @@
-<p>experience works!</p>
+<div class="professional-experience-container">
+    <p-timeline [value]="professional_experiences" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="content" let-event>
+            <div class="experience-content">
+                <p-card [header]="event.jobTitle" [subheader]="event.startYear + '-' + event.endYear">
+                    <p>
+                        <strong>Company:</strong> {{ event.company }}
+                    </p>
+                </p-card>
+            </div>
+        </ng-template>
+    </p-timeline>
+</div>

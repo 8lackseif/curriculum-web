@@ -18,13 +18,14 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { AccordionModule } from 'primeng/accordion';
 import { ExperienceComponent } from './views/experience/experience.component';
+import { TimelineModule } from 'primeng/timeline';
 
 @NgModule({
     declarations: [LayoutComponent, HeaderComponent, MenuComponent, HomeComponent, ProjectsComponent, ExperienceComponent],
     exports: [LayoutComponent],
     imports: [
         RouterModule, RouterLink, RouterLinkActive, CommonModule, SidebarModule, ButtonModule, MenuModule, ToolbarModule, CardModule, SplitterModule,
-        TabViewModule, RatingModule, FormsModule, AccordionModule      
+        TabViewModule, RatingModule, FormsModule, AccordionModule, TimelineModule      
     ],
     providers: [
         { provide: LocationStrategy, useClass: PathLocationStrategy }, ApiService

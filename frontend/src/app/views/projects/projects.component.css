@@ -1,0 +1,12 @@
+.projects-container {
+    display: block;
+}
+
+.project-container {
+    width: 80%;
+    margin-top: 1%;
+}
+
+.project-preview {
+    display: block;
+}

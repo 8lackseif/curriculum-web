@@ -1,13 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { BasicData } from '../models/basic-data.model';
 import { SkillData } from '../models/skill.model';
 import { LanguageData } from '../models/language.model';
 import { RecognitionData } from '../models/recognition.model';
 import { EducationData } from '../models/education.model';
 import { SocialMediaData } from '../models/social-media.model';
+import { ProjectData } from '../models/projects.model';
+import { ProfessionalExperienceData } from '../models/professional-experience.model';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +46,13 @@ export class ApiService {
 
   getSocialMedias(): Observable<Array<SocialMediaData>> {
     return this.http.get<Array<SocialMediaData>>(this.api_url + '/social_media/get/1');
+  }
+
+  getProjects() : Observable<Array<ProjectData>> {
+    return this.http.get<Array<ProjectData>>(this.api_url + '/project/get/1');
+  }
+
+  getProfessionalExperiences(): Observable<Array<ProfessionalExperienceData>> {
+    return this.http.get<Array<ProfessionalExperienceData>>(this.api_url + '/professional_experience/get/1');
   }
 }
