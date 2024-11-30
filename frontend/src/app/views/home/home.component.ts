@@ -7,8 +7,6 @@ import { LanguageData } from '../../models/language.model';
 import { RecognitionData } from '../../models/recognition.model';
 import { EducationData } from '../../models/education.model';
 import { SocialMediaData } from '../../models/social-media.model';
-import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
-import { FirstType, PreviewData } from '../../models/preview.model';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +31,6 @@ export class HomeComponent {
   educations: Array<EducationData> = [];
 
   social_medias: Array<SocialMediaData> = [];
-  social_medias_previews: Array<FirstType | null> = [];
 
   basic = 2;
   intermediate = 4;
@@ -83,29 +80,10 @@ export class HomeComponent {
     this.api.getSocialMedias().subscribe(
       data => {
         this.social_medias = data;
-
-        const previewsPromises = data.map(sc =>
-          getLinkPreview(sc.link).then(preview => {
-            if (this.isVariant1(preview)) {
-              return preview;
-            } else {
-              console.error('Preview no es del tipo esperado:', preview);
-              return null;
-            }
-          })
-        );
-        Promise.all(previewsPromises).then(previews => {
-          this.social_medias_previews = previews.filter(p => p !== null) as FirstType[];
-        });
       }
     );
 
   }
-
-  isVariant1(data: PreviewData): data is FirstType {
-    return 'description' in data && Array.isArray(data.images);
-  }
-
 
 }
 

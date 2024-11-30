@@ -1,6 +1,0 @@
-{
-  "/api": {
-    "target": "http://spring_boot_api:8080",
-    "secure": false
-  }
-}
