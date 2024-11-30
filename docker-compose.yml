@@ -14,8 +14,11 @@ services:
       - ./mysql:/docker-entrypoint-initdb.d  
     ports:
       - 3306:3306  
+    networks:
+      - app-network
 
-  app:
+
+  spring_boot_app:
     container_name: spring_boot_app
     build:
       context: ./backend
@@ -28,7 +31,45 @@ services:
     depends_on:
       - db
     ports:
-      - 8080:8080       
+      - 8080:8080
+    networks:
+      - app-network
+   
+
+  angular-app:
+    container_name: angular-app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - spring_boot_app
+    ports:
+      - 4000:4000
+    networks:
+      - app-network
+
+  
+  nginx:
+    container_name: angular-nginx
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro 
+      - ./nginx.crt:/etc/nginx/ssl/nginx.crt:ro
+      - ./nginx.key:/etc/nginx/ssl/nginx.key:ro
+    depends_on:
+      - angular-app
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+
 volumes:
   my_database:
 

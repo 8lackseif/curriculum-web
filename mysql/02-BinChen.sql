@@ -11,7 +11,7 @@ VALUES
     ('Java', 'Intermediate', 1),
     ('C++', 'Basic', 1),
     ('JavaScript', 'Intermediate', 1),
-    ('Kotlin', 'Intermediate', 1),
+    ('Kotlin', 'Basic', 1),
     ('HTML', 'Intermediate', 1),
     ('CSS', 'Intermediate', 1),
     ('Go', 'Basic', 1),
@@ -22,7 +22,8 @@ VALUES
     ('SQL', 'Intermediate', 1),
     ('SpringBoot', 'Basic', 1),
     ('Vue', 'Basic', 1),
-    ('Git', 'Intermediate', 1);
+    ('Git', 'Intermediate', 1),
+    ('Angular', 'Basic', 1);
 
 -- Inserting into the 'education' table
 INSERT INTO education (title, start_year, end_year, school, finished, user_id)
@@ -56,7 +57,7 @@ VALUES
 -- Inserting into the 'projects' table
 INSERT INTO projects (title, description, project_link, user_id)
 VALUES
-    ('Mi curriculum Web', 'Página web con mi curriculum digital(hecho con angular y springboot)','por hacer', 1),
+    ('Mi curriculum Web', 'Página web con mi curriculum digital (hecho con angular y springboot)','https://blackseif.tplinkdns.com', 1),
     ('Bot de Discord', 'Bot de discord hecho con Golang','https://github.com/8lackseif/GOtWebo2', 1),
-    ('Trabajo fin de curso', 'Aplicación web para gestionar inventario hecho con Vue.js y Rust(Rocket APIRest)','https://github.com/8lackseif/TFC-DAM', 1);
+    ('Trabajo fin de curso', 'Aplicación web para gestionar inventario hecho con Vue.js y Rust (Rocket APIRest)','https://github.com/8lackseif/TFC-DAM', 1);
 

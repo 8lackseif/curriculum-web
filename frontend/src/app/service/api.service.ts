@@ -16,7 +16,7 @@ import { ProfessionalExperienceData } from '../models/professional-experience.mo
 })
 export class ApiService {
 
-  api_url = 'http://blackseif.tplinkdns.com:8080';
+  api_url = '/api';
 
   constructor(private http: HttpClient) { }
 

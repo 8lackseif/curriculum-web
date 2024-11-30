@@ -1,4 +1,4 @@
-FROM node:18.13.0 as build
+FROM node:latest as build
 
 WORKDIR /app
 
@@ -12,8 +12,6 @@ COPY . .
 
 RUN ng build --configuration=production
 
-FROM nginx:latest
+EXPOSE 4000
 
-COPY --from=build app/dist/aftas-angular /usr/share/nginx/html
-
-EXPOSE 80
+CMD ["node", "dist/frontend/server/server.mjs"]
