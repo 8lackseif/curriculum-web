@@ -10,19 +10,18 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - TZ=Europe/Madrid
     volumes:
-      - my_database:/var/lib/mysql  
-      - ./mysql:/docker-entrypoint-initdb.d  
+      - my_database:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306  
+      - 3306:3306
     networks:
       - app-network
-
 
   spring_boot_app:
     container_name: spring_boot_app
     build:
       context: ./backend
-      dockerfile: Dockerfile    
+      dockerfile: Dockerfile
     restart: always
     environment:
       - MYSQL_USER=${MYSQL_USER}
@@ -34,7 +33,6 @@ services:
       - 8080:8080
     networks:
       - app-network
-   
 
   angular-app:
     container_name: angular-app
@@ -49,46 +47,9 @@ services:
     networks:
       - app-network
 
-  
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - certbot-ssl:/etc/letsencrypt
-      - certbot-www:/var/www/certbot
-    environment:
-      DOMAIN: ${DOMAIN}
-    depends_on:
-      - angular-app
-    restart: always
-    networks:
-      - app-network
-
-  certbot:
-    build:
-      context: ./certbot
-      dockerfile: Dockerfile
-      args:
-        DOMAIN: ${DOMAIN}
-        EMAIL: ${EMAIL}
-    volumes:
-      - certbot-ssl:/etc/letsencrypt
-      - certbot-www:/var/www/certbot
-    networks:
-      - app-network
-
 networks:
   app-network:
     driver: bridge
 
 volumes:
   my_database:
-  certbot-ssl:
-  certbot-www:
-
-    
-    
