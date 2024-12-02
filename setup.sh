@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ "$(id -u)" -ne 0 ]; then
-  echo "Permission Denied" >&2
-  exit 1
-fi
-
 source .env
 
 if [[ -z "$DOMAIN" || -z "$EMAIL" ]]; then
@@ -23,11 +18,10 @@ sudo apt install certbot python3-certbot-nginx
 
 sudo certbot --nginx --agree-tos --no-eff-email --email ${EMAIL} -d ${DOMAIN} --non-interactive
 
-
-sudo envsubst < "nginx.conf" > "/etc/nginx/sites-available/default.conf"
-
-sudo ln -s "/etc/nginx/sites-available/default.conf" "/etc/nginx/sites-enabled/default"
+sudo cp nginx.conf /etc/nginx/sites-available/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 sudo nginx -t
 
 sudo systemctl restart nginx
+

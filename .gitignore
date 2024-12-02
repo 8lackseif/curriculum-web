@@ -8,3 +8,5 @@ docker-compose.override.yml
 .docker/
 .docker-compose.yml*
 docker-compose.override.yml*
+
+nginx.conf

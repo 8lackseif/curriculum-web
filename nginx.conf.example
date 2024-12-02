@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name blackseif.tplinkdns.com www.blackseif.tplinkdns.com;
+    server_name YOUR_DOMAIN www.YOUR_DOMAIN;
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
@@ -14,10 +14,10 @@ server {
 
 server {
     listen 443 ssl;
-    server_name blackseif.tplinkdns.com www.blackseif.tplinkdns.com;
+    server_name YOUR_DOMAIN www.YOUR_DOMAIN;
 
-    ssl_certificate /etc/letsencrypt/live/blackseif.tplinkdns.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/blackseif.tplinkdns.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem;
 
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers on;
