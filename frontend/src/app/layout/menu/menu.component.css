@@ -4,5 +4,19 @@
 
 .menu {
     display: flex;
+    flex-direction: column;
     height: 100%;
+    width: 250px;
+    background-color: var(--my-primary-color); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 1vw;
+    padding: 1vh 1.5vw;
 }
+
+
+@media (max-width: 768px) {
+    .menu {
+        width: 200px;
+    }
+}
+

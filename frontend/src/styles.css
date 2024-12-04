@@ -13,4 +13,5 @@
 html {
     background-color: var(--my-primary-color);
     color:  var(--my-primary-color-text);
+    font-size: 14px;
 }

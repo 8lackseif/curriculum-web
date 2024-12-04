@@ -1,61 +1,76 @@
 .header {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: var(--my-primary-color);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.397);
     z-index: 1000;
-    height: 10%;
+}
+
+.main {
+    display: flex;
+    margin-top: 10vh;
 }
 
 .sidebar {
-    flex: 0 0 250px;
-    width: 12%;
-    padding: 20px;
     position: fixed;
-    height: 100%;
-    top: 0;
+    top: 10vh;
     left: 0;
-    overflow-x: hidden;
+    width: 250px;
+    height: 85%;
+    background-color: var(--my-primary-color);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .hideSidebar {
     transform: translateX(-100%);
     opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
 }
 
 .showSidebar {
     transform: translateX(0);
     opacity: 1;
-    transition: transform 0.3s, opacity 0.3s;
 }
 
 .content {
-    position: fixed;
-    top: 20%;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    overflow-y: auto;
-    z-index: 999;
-
     flex: 1;
-    
+    margin-left: 0; 
+    padding: 10px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease-in-out;
+    margin-top: 10vh;
 }
 
-.content.content-with-sidebar {
-    margin-left: 0;
-}
 
 .with-sidebar {
-    left: 12%;
-    padding: 3px;
-    transition: left 0.3s ease, padding-left 0.3s ease;
+    margin-left: 250px; 
 }
 
+/* Mobile view adjustments */
+@media (max-width: 768px) {
 
-.without-sidebar {
-    padding: 3px;
-    transition: left 0.3s ease, padding-left 0.3s ease;
-    padding-left: 1vw;
+    .header {
+        height: 9vh;
+    }
+
+    .sidebar {
+        width: 150px;
+    }
+
+    .with-sidebar {
+        margin-left: 0; 
+    }
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .sidebar {
+        top: 15vh;
+    }
+
+    .header {
+        height: 14vh;
+    }
 }

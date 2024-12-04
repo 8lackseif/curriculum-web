@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
-  sidebarVisible = true;
+  sidebarVisible = false;
 
   showSidebar(visibility: boolean) {
     this.sidebarVisible = visibility;

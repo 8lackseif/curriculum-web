@@ -3,10 +3,18 @@
 }
 
 .project-container {
-    width: 80%;
-    margin-top: 1%;
+    width: 60vw;
+    margin: auto;
 }
 
-.project-preview {
-    display: block;
+
+
+@media (max-width: 768px) {
+
+    .project-container {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
 }
